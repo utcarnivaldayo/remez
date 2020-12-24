@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remez Algorithm</title>
+    <script>
+        MathJax = {
+            chtml: {
+                matchFontHeight: false
+            },
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script type="module" src="src/index.js"></script>
+</head>
+
+<body>
+    <h1>Remez Algorithm</h1>
+    ミニマックス基準による偶数次偶対称FIR (Finite Impulse Response)フィルタの最適設計を行います。
+    <h3>設計条件</h3>
+
+    <p>フィルタ次数 : $N / 2$ = <input type="number" id="order" value="10" min="1" max="500" step="1"> </p>
+    <p>通過域端周波数 : $f_p$ = <input type="number" id="passband" value="0.2" min="0.0" max="0.5" step="0.01"> </p>
+    <p>阻止域端周波数 : $f_s$ = <input type="number" id="stopband" value="0.3" min="0.0" max="0.5" step="0.01"> <br>
+    <p><input type="button" value="Run" id="btnrun" onclick="Update()"></p>
+    <p>※設計条件によっては等リプルにならない場合もあるので注意!!! 失敗したら別の条件を試してみて下さい。</p>
+    <h3>設計結果</h3>
+    <canvas id="magResponse" width="640" hight="480">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+            integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+            crossorigin="anonymous">
+            </script>
+    </canvas>
+    <p id="error"></p>
+    <div id="coef"></div>
+
+</body>
+
+</html>

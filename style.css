@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/*コメント*/
+/*セレクター{プロパティ: 値};*/
+
+/*ブラウザのデフォルト設定のフォントサイズを設定*/
+/*これを設定しないと、行間設定等が反映されない*/
+html {
+    font-size: 100%;
+}
+
+/*ページ全体に色を付けるならbodyでbackground-color*/
+body {
+    background-image: url(img/logo.png);
+    background-repeat: no-repeat;
+    background-color: salmon;
+    /*background-sizeが優先*/
+    /*background-size: contain;*/
+    background-position: right 20% bottom 45%;
+}
+
+div {
+    background-color: rgb(128, 128, 128);
+    /*width: 50%;*/
+    /*
+    height: 50%;
+    */
+    margin : 1% 25% 10% 10%;/*上,右,下,左*/
+    /*height: 50%;*/
+    padding: 5%;
+}
+
+h1 {
+    /*フォント指定*/
+    /*前に書かれたフォントが優先*/
+    /*英語フォントは日本語表示できないので英語フォントを優先*/
+    /*総称フォントファミリ : 最後の砦で、こういう系のフォントで表示してとブラウザに伝える*/
+    font-family: "Yu Gothic", "YuGothic", "游ゴシック体", "sans-serif";
+    color: #000000; /*RGB*/
+    background-color: teal;
+}
+
+h2 {
+    font-family: "Yu Gothic", "YuGothic", "游ゴシック体", "sans-serif";
+    color: rgba(128, 128, 128, 0.5); /*RGBa*/
+}
+
+p {
+    /*行間は1.5-1.9あたりがみやすい*/
+    /*単位なしはフォントサイズとの比率*/
+    line-height: 1.7;
+    font-family: 'Indie Flower', cursive;
+    text-align: justify; /*両端揃え*/
+    /*border : 線の太さ スタイル カラー*/
+    border-top: thick outset tomato;
+    border-bottom: thick outset aqua;
+    border-left: medium dashed red;
+    border-right: thick dotted black;
+    /*実線 : solid;*/
+    /*2本線 : double;*/
+    /*破線 : dashed*/
+    /*点線 : dotted*/
+    /*groove : 立体的な谷型*/
+    /*ridge : 立体的な山形*/
+    /*inset : 囲まれた凹んで見える*/
+    /*outset : 囲まれた部分が浮き上がって見える*/
+    
+    color: orchid;
+    font-size: x-large;
+}
+
+ul {
+    /*list-style-type: circle;*/
+    list-style-type : circle;
+    list-style-image: url(img/dotgibara.png);
+    /*list-style-position: inside;*/
+}
+
+ol {
+    /*リストのマーカー*/
+    list-style-type: japanese-formal;
+}
+
+/*class*/
+p.blue {
+    color: blue;
+}
+
+/*smallクラス*/
+.small {
+    font-size: x-small;
+}
+
+/*pタグのsmallクラス*/
+p.small {
+    font-size: xx-small;
+}
+
+/*id*/
+#orange {
+    color: orange;
+}
+
+/*FlexBox(親)*/
+.container {
+    
+    /*
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    height: 100vh;
+    */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap : 10px;
+}
+
+/*子要素*/
+.item {
+    background: cornsilk;
+    color: #000;
+    margin: 10px;
+    padding: 10px;
+}
